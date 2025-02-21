@@ -2,56 +2,59 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoSingleton<InputManager>
+namespace Input
 {
-    public static Action<Vector2> cursorMovement;
-    public static Action confirmStarted;
-    public static Action cancelStarted;
-
-    private PlayerInputActions _playerInput;
-
-    private void OnEnable()
+    public class InputManager : MonoSingleton<InputManager>
     {
-        InitializeInputs();
-    }
-    
-    private void Update()
-    {
-        if (_playerInput.BattleInput.enabled)
+        public static Action<Vector2> cursorMovement;
+        public static Action confirmStarted;
+        public static Action cancelStarted;
+
+        private PlayerInputActions _playerInput;
+
+        private void OnEnable()
         {
-            CursorMovement();
+            InitializeInputs();
         }
-    }
-
-    private void InitializeInputs()
-    {
-        _playerInput = new PlayerInputActions();
-        _playerInput.BattleInput.Enable();
-
-        // initialize combat inputs
-        _playerInput.BattleInput.Confirm.started += ConfirmStarted;
-        _playerInput.BattleInput.Cancel.started += CancelStarted;
-    }
-
-    private void CursorMovement()
-    {
-        var move = _playerInput.BattleInput.Cursor.ReadValue<Vector2>();
-        cursorMovement?.Invoke(move);
-    }
     
-    private void ConfirmStarted(InputAction.CallbackContext context)
-    {
-        if (_playerInput.BattleInput.enabled)
+        private void Update()
         {
-            confirmStarted?.Invoke();
+            if (_playerInput.BattleInput.enabled)
+            {
+                CursorMovement();
+            }
         }
-    }
 
-    private void CancelStarted(InputAction.CallbackContext context)
-    {
-        if (_playerInput.BattleInput.enabled)
+        private void InitializeInputs()
         {
-            cancelStarted?.Invoke();
+            _playerInput = new PlayerInputActions();
+            _playerInput.BattleInput.Enable();
+
+            // initialize combat inputs
+            _playerInput.BattleInput.Confirm.started += ConfirmStarted;
+            _playerInput.BattleInput.Cancel.started += CancelStarted;
+        }
+
+        private void CursorMovement()
+        {
+            var move = _playerInput.BattleInput.Cursor.ReadValue<Vector2>();
+            cursorMovement?.Invoke(move);
+        }
+    
+        private void ConfirmStarted(InputAction.CallbackContext context)
+        {
+            if (_playerInput.BattleInput.enabled)
+            {
+                confirmStarted?.Invoke();
+            }
+        }
+
+        private void CancelStarted(InputAction.CallbackContext context)
+        {
+            if (_playerInput.BattleInput.enabled)
+            {
+                cancelStarted?.Invoke();
+            }
         }
     }
 }
