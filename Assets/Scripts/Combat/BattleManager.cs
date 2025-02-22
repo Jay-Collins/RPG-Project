@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Combat
 {
-    public class BattleManager : MonoBehaviour
+    public class BattleManager : MonoSingleton<BattleManager>
     {
         private enum Phase {Start, Order, Enemy, Player, Combat}
         private Phase combatPhase = Phase.Start;

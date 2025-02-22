@@ -1,16 +1,18 @@
+using System;
+using System.Collections.Generic;
+using Combat.Characters;
 using UnityEngine;
 
-public class PlayerPartyManager : MonoBehaviour
+namespace Player
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class PlayerPartyManager : MonoSingleton<PlayerPartyManager>
     {
+        [SerializeField] private List<Character> _allCharacters;
+        [SerializeField] private List<Character> _partyCharacters;
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void PopulateParty()
+        {
+            
+        }
     }
 }
