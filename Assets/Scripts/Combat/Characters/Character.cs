@@ -1,4 +1,3 @@
-using System;
 using Scriptable_Objects;
 using UnityEngine;
 
@@ -9,8 +8,10 @@ namespace Combat.Characters
         [SerializeField] private CharacterData _characterData;
         [SerializeField] private WeaponData _weapon;
         [SerializeField] private ArmorData _armor;
+        
         public string characterName { get; set; }
-        public int health { get; set; }
+        public int maxHealth { get; set; }
+        private int _currentHealth;
         public int attack { get; set; }
         public int defense { get; set; }
         public int speed { get; set; }
@@ -27,11 +28,22 @@ namespace Combat.Characters
                 PopulateFromData(_characterData);
             }
         }
+
+        private void TakeDamage(int damage)
+        {
+            _currentHealth -= damage;
+            // update UI
+            
+            if (_currentHealth <= 0)
+            {
+                // death sequence
+            }
+        }
         
         private void PopulateFromData(CharacterData data)
         {
             characterName = data.name;
-            health = data.health;
+            maxHealth = data.health;
             attack = data.attack;
             defense = data.defence;
             speed = data.speed;

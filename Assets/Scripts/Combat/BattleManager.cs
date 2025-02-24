@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Combat
@@ -11,8 +12,10 @@ namespace Combat
         [SerializeField] private GameObject _playerPartyContainer;
         [SerializeField] private GameObject _enemyPartyContainer;
         
-        private void Start()
+        private void BeginBattle()
         {
+            // transition scenes to battle scene
+            
             OrderPhase();
         }
         
