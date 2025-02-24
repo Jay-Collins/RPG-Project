@@ -6,8 +6,8 @@ namespace Input
 {
     public class InputManager : MonoSingleton<InputManager>
     {
-        public static Action<Vector2> cursorMovement;
-        public static Action confirmStarted;
+        public static Action<Vector2> movement;
+        public static Action interactStarted;
         public static Action cancelStarted;
 
         private PlayerInputActions _playerInput;
@@ -19,39 +19,39 @@ namespace Input
     
         private void Update()
         {
-            if (_playerInput.BattleInput.enabled)
+            if (_playerInput.Overworld.enabled)
             {
-                CursorMovement();
+                Movement();
             }
         }
 
         private void InitializeInputs()
         {
             _playerInput = new PlayerInputActions();
-            _playerInput.BattleInput.Enable();
+            _playerInput.Overworld.Enable();
 
             // initialize combat inputs
-            _playerInput.BattleInput.Confirm.started += ConfirmStarted;
-            _playerInput.BattleInput.Cancel.started += CancelStarted;
+            _playerInput.Overworld.Interact.started += InteractStarted;
+            _playerInput.Overworld.Cancel.started += CancelStarted;
         }
 
-        private void CursorMovement()
+        private void Movement()
         {
-            var move = _playerInput.BattleInput.Cursor.ReadValue<Vector2>();
-            cursorMovement?.Invoke(move);
+            var move = _playerInput.Overworld.Movement.ReadValue<Vector2>();
+            movement?.Invoke(move);
         }
-    
-        private void ConfirmStarted(InputAction.CallbackContext context)
+        
+        private void InteractStarted(InputAction.CallbackContext context)
         {
-            if (_playerInput.BattleInput.enabled)
+            if (_playerInput.Overworld.enabled)
             {
-                confirmStarted?.Invoke();
+                interactStarted?.Invoke();
             }
         }
 
         private void CancelStarted(InputAction.CallbackContext context)
         {
-            if (_playerInput.BattleInput.enabled)
+            if (_playerInput.Overworld.enabled)
             {
                 cancelStarted?.Invoke();
             }

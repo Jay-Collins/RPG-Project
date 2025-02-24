@@ -24,22 +24,22 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputActions"",
     ""maps"": [
         {
-            ""name"": ""BattleInput"",
-            ""id"": ""c7bf416d-a690-4802-97fc-90469ba97496"",
+            ""name"": ""Overworld"",
+            ""id"": ""b42ce657-0c16-494e-8d74-bbf92eb88283"",
             ""actions"": [
                 {
-                    ""name"": ""Cursor"",
+                    ""name"": ""Movement"",
                     ""type"": ""Value"",
-                    ""id"": ""a28ed983-4631-446f-b62c-578ddac45c9b"",
+                    ""id"": ""5278bb7c-f721-4aad-af4d-1c92762c1cf3"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Confirm"",
+                    ""name"": ""Interact"",
                     ""type"": ""Button"",
-                    ""id"": ""ec1ccc13-eba7-434f-a035-1eec0fd1f4d9"",
+                    ""id"": ""b088bd89-716d-4620-a272-55ea5d3479a5"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -48,7 +48,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Cancel"",
                     ""type"": ""Button"",
-                    ""id"": ""e856a859-fbd9-45b8-9b8b-a5e2baa0e4c1"",
+                    ""id"": ""805f1dd6-81b4-453e-84c5-facab4127d4d"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -58,74 +58,74 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": ""2D Vector"",
-                    ""id"": ""110f43c6-0b0d-475b-bf14-6fa993c7d0b0"",
+                    ""id"": ""39fbc36d-3386-45a6-8dea-5db008c73ba1"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Cursor"",
+                    ""action"": ""Movement"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""0c9ea7cc-1daa-4043-a3f0-65925a02cd58"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""id"": ""4c992a79-76f9-4a21-816c-2ca8c82334c4"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Cursor"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""2c2d5535-8c0c-4f6b-8569-1c98b5f5ae04"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""id"": ""d0d09556-290e-4717-981a-3e7307da0828"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Cursor"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""c40ae267-572e-46b1-bab6-d752af4b0af8"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""id"": ""8ed2c14c-34f8-445a-86bf-de97accbfca4"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Cursor"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""f37d8a44-937c-45b6-999f-022e49edaa92"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""id"": ""c00736cc-ebf6-496f-8746-292e3d6c10e2"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Cursor"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0a082316-5440-4b4d-a121-3cbf299b3b34"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""id"": ""3bf07352-b95e-49aa-b769-053bbdb2b2d1"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Confirm"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d2bd7d81-0474-4e55-b436-76253c998811"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""id"": ""1d0c88d0-5935-4bd1-a8af-6e4188c2ba00"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -138,16 +138,16 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // BattleInput
-        m_BattleInput = asset.FindActionMap("BattleInput", throwIfNotFound: true);
-        m_BattleInput_Cursor = m_BattleInput.FindAction("Cursor", throwIfNotFound: true);
-        m_BattleInput_Confirm = m_BattleInput.FindAction("Confirm", throwIfNotFound: true);
-        m_BattleInput_Cancel = m_BattleInput.FindAction("Cancel", throwIfNotFound: true);
+        // Overworld
+        m_Overworld = asset.FindActionMap("Overworld", throwIfNotFound: true);
+        m_Overworld_Movement = m_Overworld.FindAction("Movement", throwIfNotFound: true);
+        m_Overworld_Interact = m_Overworld.FindAction("Interact", throwIfNotFound: true);
+        m_Overworld_Cancel = m_Overworld.FindAction("Cancel", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
     {
-        UnityEngine.Debug.Assert(!m_BattleInput.enabled, "This will cause a leak and performance issues, PlayerInputActions.BattleInput.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Overworld.enabled, "This will cause a leak and performance issues, PlayerInputActions.Overworld.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -206,71 +206,71 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // BattleInput
-    private readonly InputActionMap m_BattleInput;
-    private List<IBattleInputActions> m_BattleInputActionsCallbackInterfaces = new List<IBattleInputActions>();
-    private readonly InputAction m_BattleInput_Cursor;
-    private readonly InputAction m_BattleInput_Confirm;
-    private readonly InputAction m_BattleInput_Cancel;
-    public struct BattleInputActions
+    // Overworld
+    private readonly InputActionMap m_Overworld;
+    private List<IOverworldActions> m_OverworldActionsCallbackInterfaces = new List<IOverworldActions>();
+    private readonly InputAction m_Overworld_Movement;
+    private readonly InputAction m_Overworld_Interact;
+    private readonly InputAction m_Overworld_Cancel;
+    public struct OverworldActions
     {
         private @PlayerInputActions m_Wrapper;
-        public BattleInputActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Cursor => m_Wrapper.m_BattleInput_Cursor;
-        public InputAction @Confirm => m_Wrapper.m_BattleInput_Confirm;
-        public InputAction @Cancel => m_Wrapper.m_BattleInput_Cancel;
-        public InputActionMap Get() { return m_Wrapper.m_BattleInput; }
+        public OverworldActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Overworld_Movement;
+        public InputAction @Interact => m_Wrapper.m_Overworld_Interact;
+        public InputAction @Cancel => m_Wrapper.m_Overworld_Cancel;
+        public InputActionMap Get() { return m_Wrapper.m_Overworld; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(BattleInputActions set) { return set.Get(); }
-        public void AddCallbacks(IBattleInputActions instance)
+        public static implicit operator InputActionMap(OverworldActions set) { return set.Get(); }
+        public void AddCallbacks(IOverworldActions instance)
         {
-            if (instance == null || m_Wrapper.m_BattleInputActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_BattleInputActionsCallbackInterfaces.Add(instance);
-            @Cursor.started += instance.OnCursor;
-            @Cursor.performed += instance.OnCursor;
-            @Cursor.canceled += instance.OnCursor;
-            @Confirm.started += instance.OnConfirm;
-            @Confirm.performed += instance.OnConfirm;
-            @Confirm.canceled += instance.OnConfirm;
+            if (instance == null || m_Wrapper.m_OverworldActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_OverworldActionsCallbackInterfaces.Add(instance);
+            @Movement.started += instance.OnMovement;
+            @Movement.performed += instance.OnMovement;
+            @Movement.canceled += instance.OnMovement;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
             @Cancel.started += instance.OnCancel;
             @Cancel.performed += instance.OnCancel;
             @Cancel.canceled += instance.OnCancel;
         }
 
-        private void UnregisterCallbacks(IBattleInputActions instance)
+        private void UnregisterCallbacks(IOverworldActions instance)
         {
-            @Cursor.started -= instance.OnCursor;
-            @Cursor.performed -= instance.OnCursor;
-            @Cursor.canceled -= instance.OnCursor;
-            @Confirm.started -= instance.OnConfirm;
-            @Confirm.performed -= instance.OnConfirm;
-            @Confirm.canceled -= instance.OnConfirm;
+            @Movement.started -= instance.OnMovement;
+            @Movement.performed -= instance.OnMovement;
+            @Movement.canceled -= instance.OnMovement;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
             @Cancel.started -= instance.OnCancel;
             @Cancel.performed -= instance.OnCancel;
             @Cancel.canceled -= instance.OnCancel;
         }
 
-        public void RemoveCallbacks(IBattleInputActions instance)
+        public void RemoveCallbacks(IOverworldActions instance)
         {
-            if (m_Wrapper.m_BattleInputActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_OverworldActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IBattleInputActions instance)
+        public void SetCallbacks(IOverworldActions instance)
         {
-            foreach (var item in m_Wrapper.m_BattleInputActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_OverworldActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_BattleInputActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_OverworldActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public BattleInputActions @BattleInput => new BattleInputActions(this);
-    public interface IBattleInputActions
+    public OverworldActions @Overworld => new OverworldActions(this);
+    public interface IOverworldActions
     {
-        void OnCursor(InputAction.CallbackContext context);
-        void OnConfirm(InputAction.CallbackContext context);
+        void OnMovement(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
     }
 }

@@ -9,15 +9,16 @@ namespace Combat.Characters
         [SerializeField] private CharacterData _characterData;
         [SerializeField] private WeaponData _weapon;
         [SerializeField] private ArmorData _armor;
-        private string _characterName { get; set; }
-        private int _health { get; set; }
-        private int _attack { get; set; }
-        private int _defense { get; set; }
-        private int _speed { get; set; }
-        private int _swordProf { get; set; }
-        private int _greatswordProf { get; set; }
-        private int _staffProf { get; set; }
-        private int _bowProf { get; set; }
+        public string characterName { get; set; }
+        public int health { get; set; }
+        public int attack { get; set; }
+        public int defense { get; set; }
+        public int speed { get; set; }
+        public int swordProf { get; set; }
+        public int greatswordProf { get; set; }
+        public int staffProf { get; set; }
+        public int bowProf { get; set; }
+        public int characterID { get; set; }
         
         private void Awake()
         {
@@ -29,15 +30,16 @@ namespace Combat.Characters
         
         private void PopulateFromData(CharacterData data)
         {
-            _characterName = data.name;
-            _health = data.health;
-            _attack = data.attack;
-            _defense = data.defence;
-            _speed = data.speed;
-            _swordProf = data.swordProficiency;
-            _greatswordProf = data.greatSwordProficiency;
-            _staffProf = data.staffProficiency;
-            _bowProf = data.bowProficiency;
+            characterName = data.name;
+            health = data.health;
+            attack = data.attack;
+            defense = data.defence;
+            speed = data.speed;
+            swordProf = data.swordProficiency;
+            greatswordProf = data.greatSwordProficiency;
+            staffProf = data.staffProficiency;
+            bowProf = data.bowProficiency;
+            characterID = data.characterID;
         }
     }
 }
